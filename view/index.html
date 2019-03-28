@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="../assets/css.css">
+
+    <title>Criptografia Vigenere</title>
+</head>
+<body>
+    <div class="container">
+        <section class="form z-depth-5">
+            <div class="row">
+                <div class="col s12 center">
+                    <img src="../assets/img/sort.png" alt="Cifra de César" width="80px" height="80px">
+                </div>
+                <div class="col s12 center"><strong>ALGORITMO VIGENERE</strong></div>
+            </div>
+            <div class="row">
+                    <form class="col s12" onsubmit="vigenere.adiciona(event)">
+                        <div class="row">
+                            
+                            <h6 class="col s12">
+                                <strong>Digite a mensagem abaixo.</strong>
+                            </h6>
+
+                            <div class="input-field col s12 center">
+                                <textarea id="mensagem" class="materialize-textarea"></textarea>
+                                <label for="mensagem">Mensagem</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            
+                            <h6 class="col s12">
+                                <strong>Digite a chave abaixo.</strong>
+                            </h6>
+                            
+                            <div class="input-field col s12 center">
+                                <textarea id="chave" class="materialize-textarea"></textarea>
+                                <label for="chave">Chave</label>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                                <h6 class="col s12">
+                                    <strong>Escolha uma opção: 1 - Criptografar, 2 - Descriptografar</strong>
+                                </h6>
+                            <p class="col s12">
+                                <label>
+                                    <input type="number" id="opcao" min="1" max="2"/>
+                                </label>
+                            </p>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col s12 ">
+                                
+                                <button class="btn waves-effect waves-light grey darken-4" type="submit" >
+                                    Enviar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                
+            </div>
+
+            <section class="row">
+                <div class="col s12">
+                    <h2>Resultado</h2>
+                    <div id="mensagensView"></div>
+                </div>
+                
+            </section>
+
+    </section>
+
+    
+    </div>
+
+
+    <script src="../controller/VigenereController.js">
+    </script>
+    <script src="../model/Mensagem.js"></script>
+    <script src="../model/ListaMensagens.js"></script>
+    <script src="../controller/CriptografarController.js"></script>
+    <script src="../controller/DescriptografarController.js"></script>
+    <script src="../model/ListaMensagensCriptografadas.js"></script>
+    <script src="../model/ListaMensagensDescriptografadas.js"></script>
+
+    <script>
+        let vigenere = new VigenereController();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+
+  
+</body>
+</html>
